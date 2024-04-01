@@ -10,11 +10,49 @@ import json
 from typing import Dict
 
 from omegaconf import OmegaConf
-from video_llama.common.registry import registry
+from .registry import registry
+
+config_dict = {
+    'model': {
+        'arch': 'video_llama',
+        'model_type': 'pretrain_vicuna',
+        'freeze_vit': True,
+        'freeze_qformer': True,
+        'max_txt_len': 512,
+        'end_sym': '###',
+        'low_resource': False,
+        'frozen_llama_proj': False,
+        'llama_model': '/home/murphy/data-hdd/videoqa_model/Video-LLaMA-2-7B-Finetuned/llama-2-7b-chat-hf',
+        'ckpt': '/home/murphy/data-hdd/videoqa_model/Video-LLaMA-2-7B-Finetuned/VL_LLaMA_2_7B_Finetuned.pth',
+        'equip_audio_branch': False,
+        'fusion_head_layers': 2,
+        'max_frame_pos': 32,
+        'fusion_header_type': 'seqTransf'
+    },
+    'datasets': {
+        'webvid': {
+            'vis_processor': {
+                'train': {
+                    'name': 'alpro_video_eval',
+                    'n_frms': 16,
+                    'image_size': 224
+                }
+            },
+            'text_processor': {
+                'train': {
+                    'name': 'blip_caption'
+                }
+            }
+        }
+    },
+    'run': {
+        'task': 'video_text_pretrain'
+    }
+}
 
 
 class Config:
-    def __init__(self, args):
+    def __init__(self, args, llama_model_path, vl_model_path):
         self.config = {}
 
         self.args = args
@@ -24,7 +62,10 @@ class Config:
 
         user_config = self._build_opt_list(self.args.options)
 
-        config = OmegaConf.load(self.args.cfg_path)
+        config_dict['model']['llama_model'] = llama_model_path
+        config_dict['model']['ckpt'] = vl_model_path
+        # Load config from dict instead of args
+        config = OmegaConf.create(config_dict)
 
         runner_config = self.build_runner_config(config)
         model_config = self.build_model_config(config, **user_config)

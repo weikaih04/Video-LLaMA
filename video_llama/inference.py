@@ -1,17 +1,17 @@
 import argparse
 import os
 
-from video_llama.common.config import Config
-from video_llama.common.registry import registry
-from video_llama.conversation.conversation_video import Chat, default_conversation, conv_llava_llama_2
+from .common.config import Config
+from .common.registry import registry
+from .conversation.conversation_video import Chat, default_conversation, conv_llava_llama_2
 import decord
 decord.bridge.set_bridge('torch')
 
-from video_llama.datasets.builders import *
-from video_llama.models import *
-from video_llama.processors import *
-from video_llama.runners import *
-from video_llama.tasks import *
+from .datasets.builders import *
+from .models import *
+from .processors import *
+from .runners import *
+from .tasks import *
 
 
 def create_args(cfg_path='eval_configs/video_llama_eval_withaudio.yaml', model_type='LLama2', torch_device='cuda:0'):
@@ -41,9 +41,9 @@ def create_args(cfg_path='eval_configs/video_llama_eval_withaudio.yaml', model_t
 
 class ChatBot:
 
-    def __init__(self, cfg_path, model_type, torch_device):
+    def __init__(self, cfg_path, llama_model_path, vl_model_path, model_type, torch_device):
         args = create_args(cfg_path=cfg_path, model_type=model_type, torch_device=model_type)
-        self.chat = self._init_model(args)
+        self.chat = self._init_model(args, llama_model_path, vl_model_path)
         if args.model_type == 'vicuna':
             self.chat_state = default_conversation.copy()
         else:
@@ -51,9 +51,9 @@ class ChatBot:
         self.img_list = list()
         self.set_para()
 
-    def _init_model(self, args):
+    def _init_model(self, args, llama_model_path, vl_model_path):
         print('Initializing Chat')
-        cfg = Config(args)
+        cfg = Config(args, llama_model_path, vl_model_path)
         model_config = cfg.model_cfg
         model_config.device_8bit = args.gpu_id
         model_cls = registry.get_model_class(model_config.arch)
@@ -92,6 +92,7 @@ class ChatBot:
                                        max_length=2000)[0]
 
         return llm_message
+        
 
     def reset(self):
         if self.chat_state is not None:

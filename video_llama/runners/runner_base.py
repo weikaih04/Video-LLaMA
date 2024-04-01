@@ -15,17 +15,17 @@ from pathlib import Path
 import torch
 import torch.distributed as dist
 import webdataset as wds
-from video_llama.common.dist_utils import (
+from ..common.dist_utils import (
     download_cached_file,
     get_rank,
     get_world_size,
     is_main_process,
     main_process,
 )
-from video_llama.common.registry import registry
-from video_llama.common.utils import is_url
-from video_llama.datasets.data_utils import concat_datasets, reorg_datasets_by_split, ChainDataset
-from video_llama.datasets.datasets.dataloader_utils import (
+from ..common.registry import registry
+from ..common.utils import is_url
+from ..datasets.data_utils import concat_datasets, reorg_datasets_by_split, ChainDataset
+from ..datasets.datasets.dataloader_utils import (
     IterLoader,
     MultiIterLoader,
     PrefetchLoader,

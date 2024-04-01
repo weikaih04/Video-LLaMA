@@ -1,6 +1,6 @@
 import os
-from video_llama.datasets.datasets.base_dataset import BaseDataset
-from video_llama.datasets.datasets.caption_datasets import CaptionDataset
+from .base_dataset import BaseDataset
+from .caption_datasets import CaptionDataset
 import pandas as pd
 import decord
 from decord import VideoReader
@@ -13,11 +13,11 @@ import transformers
 import pathlib
 import json
 from transformers import AutoTokenizer, AutoModelForCausalLM, LlamaTokenizer
-from video_llama.conversation.conversation_video import Conversation,SeparatorStyle
+from ...conversation.conversation_video import Conversation,SeparatorStyle
 DEFAULT_IMAGE_PATCH_TOKEN = '<ImageHere>'
 DEFAULT_IMAGE_TOKEN = "<image>"
 import copy
-from video_llama.processors import transforms_video,AlproVideoTrainProcessor
+from ...processors import transforms_video,AlproVideoTrainProcessor
 IGNORE_INDEX = -100
 image_conversation = Conversation(
     system="",

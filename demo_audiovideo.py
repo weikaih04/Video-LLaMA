@@ -10,20 +10,20 @@ import torch
 import torch.backends.cudnn as cudnn
 import gradio as gr
 
-from video_llama.common.config import Config
-from video_llama.common.dist_utils import get_rank
-from video_llama.common.registry import registry
-from video_llama.conversation.conversation_video import Chat, Conversation, default_conversation,SeparatorStyle,conv_llava_llama_2
+from .video_llama.common.config import Config
+from .video_llama.common.dist_utils import get_rank
+from .video_llama.common.registry import registry
+from .video_llama.conversation.conversation_video import Chat, Conversation, default_conversation,SeparatorStyle,conv_llava_llama_2
 import decord
 decord.bridge.set_bridge('torch')
 
 #%%
 # imports modules for registration
-from video_llama.datasets.builders import *
-from video_llama.models import *
-from video_llama.processors import *
-from video_llama.runners import *
-from video_llama.tasks import *
+from .video_llama.datasets.builders import *
+from .video_llama.models import *
+from .video_llama.processors import *
+from .video_llama.runners import *
+from .video_llama.tasks import *
 
 #%%
 def parse_args():

@@ -1,6 +1,6 @@
 import os
-from video_llama.datasets.datasets.base_dataset import BaseDataset
-from video_llama.datasets.datasets.caption_datasets import CaptionDataset
+from .base_dataset import BaseDataset
+from .caption_datasets import CaptionDataset
 import pandas as pd
 import decord
 from decord import VideoReader
@@ -14,10 +14,10 @@ import pathlib
 import json
 from transformers import AutoTokenizer, AutoModelForCausalLM, LlamaTokenizer
 import copy
-from video_llama.processors import transforms_video,AlproVideoTrainProcessor
+from ...processors import transforms_video,AlproVideoTrainProcessor
 from torchvision import transforms
-from video_llama.processors.video_processor import ToTHWC,ToUint8,load_video
-from video_llama.conversation.conversation_video import Conversation,SeparatorStyle
+from ...processors.video_processor import ToTHWC,ToUint8,load_video
+from ...conversation.conversation_video import Conversation,SeparatorStyle
 
 DEFAULT_IMAGE_PATCH_TOKEN = '<ImageHere>'
 video_conversation = Conversation(

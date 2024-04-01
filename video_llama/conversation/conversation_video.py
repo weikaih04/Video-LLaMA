@@ -15,11 +15,11 @@ import dataclasses
 from enum import auto, Enum
 from typing import List, Tuple, Any
 import os
-from video_llama.common.registry import registry
-from video_llama.processors.video_processor import ToTHWC,ToUint8,load_video
-from video_llama.processors import Blip2ImageEvalProcessor
+from ..common.registry import registry
+from ..processors.video_processor import ToTHWC,ToUint8,load_video
+from ..processors import Blip2ImageEvalProcessor
             
-from video_llama.models.ImageBind.data import load_and_transform_audio_data
+from ..models.ImageBind.data import load_and_transform_audio_data
 class SeparatorStyle(Enum):
     """Different separator style."""
     SINGLE = auto()

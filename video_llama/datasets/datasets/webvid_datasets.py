@@ -6,8 +6,8 @@
 """
 
 import os
-from video_llama.datasets.datasets.base_dataset import BaseDataset
-from video_llama.datasets.datasets.caption_datasets import CaptionDataset
+from .base_dataset import BaseDataset
+from .caption_datasets import CaptionDataset
 import pandas as pd
 import decord
 from decord import VideoReader

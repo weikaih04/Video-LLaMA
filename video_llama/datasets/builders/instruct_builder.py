@@ -2,11 +2,11 @@ import os
 import logging
 import warnings
 
-from video_llama.common.registry import registry
-from video_llama.datasets.builders.base_dataset_builder import BaseDatasetBuilder
-from video_llama.datasets.datasets.laion_dataset import LaionDataset
-from video_llama.datasets.datasets.llava_instruct_dataset import Instruct_Dataset
-from video_llama.datasets.datasets.video_instruct_dataset import Video_Instruct_Dataset
+from ...common.registry import registry
+from ...datasets.builders.base_dataset_builder import BaseDatasetBuilder
+from ...datasets.datasets.laion_dataset import LaionDataset
+from ...datasets.datasets.llava_instruct_dataset import Instruct_Dataset
+from ...datasets.datasets.video_instruct_dataset import Video_Instruct_Dataset
 
 @registry.register_builder("instruct")
 class Instruct_Builder(BaseDatasetBuilder):

@@ -14,23 +14,23 @@ import numpy as np
 import torch
 import torch.backends.cudnn as cudnn
 
-import video_llama.tasks as tasks
-from video_llama.common.config import Config
-from video_llama.common.dist_utils import get_rank, init_distributed_mode
-from video_llama.common.logger import setup_logger
-from video_llama.common.optims import (
+from .video_llama import tasks
+from .video_llama.common.config import Config
+from .video_llama.common.dist_utils import get_rank, init_distributed_mode
+from .video_llama.common.logger import setup_logger
+from .video_llama.common.optims import (
     LinearWarmupCosineLRScheduler,
     LinearWarmupStepLRScheduler,
 )
-from video_llama.common.registry import registry
-from video_llama.common.utils import now
+from .video_llama.common.registry import registry
+from .video_llama.common.utils import now
 
 # imports modules for registration
-from video_llama.datasets.builders import *
-from video_llama.models import *
-from video_llama.processors import *
-from video_llama.runners import *
-from video_llama.tasks import *
+from .video_llama.datasets.builders import *
+from .video_llama.models import *
+from .video_llama.processors import *
+from .video_llama.runners import *
+from .video_llama.tasks import *
 
 
 def parse_args():

@@ -2,10 +2,10 @@ import os
 import logging
 import warnings
 
-from video_llama.common.registry import registry
-from video_llama.datasets.builders.base_dataset_builder import BaseDatasetBuilder
-from video_llama.datasets.datasets.laion_dataset import LaionDataset
-from video_llama.datasets.datasets.cc_sbu_dataset import CCSBUDataset, CCSBUAlignDataset
+from ...common.registry import registry
+from ...datasets.builders.base_dataset_builder import BaseDatasetBuilder
+from ...datasets.datasets.laion_dataset import LaionDataset
+from ...datasets.datasets.cc_sbu_dataset import CCSBUDataset, CCSBUAlignDataset
 
 
 @registry.register_builder("cc_sbu")

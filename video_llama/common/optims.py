@@ -7,7 +7,7 @@
 
 import math
 
-from video_llama.common.registry import registry
+from .registry import registry
 
 
 @registry.register_lr_scheduler("linear_warmup_step_lr")

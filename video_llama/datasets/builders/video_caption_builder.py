@@ -2,9 +2,9 @@ import os
 import logging
 import warnings
 
-from video_llama.common.registry import registry
-from video_llama.datasets.builders.base_dataset_builder import BaseDatasetBuilder
-from video_llama.datasets.datasets.webvid_datasets import WebvidDataset
+from ...common.registry import registry
+from ...datasets.builders.base_dataset_builder import BaseDatasetBuilder
+from ...datasets.datasets.webvid_datasets import WebvidDataset
 
 @registry.register_builder("webvid")
 class WebvidBuilder(BaseDatasetBuilder):

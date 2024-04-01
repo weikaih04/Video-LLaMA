@@ -16,13 +16,13 @@ import torch.nn as nn
 import torch.distributed as dist
 import torch.nn.functional as F
 
-import video_llama.common.dist_utils as dist_utils
-from video_llama.common.dist_utils import download_cached_file
-from video_llama.common.utils import is_url
-from video_llama.common.logger import MetricLogger
-from video_llama.models.base_model import BaseModel
-from video_llama.models.Qformer import BertConfig, BertLMHeadModel
-from video_llama.models.eva_vit import create_eva_vit_g
+from ..common import dist_utils as dist_utils
+from ..common.dist_utils import download_cached_file
+from ..common.utils import is_url
+from ..common.logger import MetricLogger
+from .base_model import BaseModel
+from .Qformer import BertConfig, BertLMHeadModel
+from .eva_vit import create_eva_vit_g
 from transformers import BertTokenizer
 
 

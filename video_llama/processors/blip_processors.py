@@ -7,9 +7,9 @@
 
 import re
 
-from video_llama.common.registry import registry
-from video_llama.processors.base_processor import BaseProcessor
-from video_llama.processors.randaugment import RandomAugment
+from ..common.registry import registry
+from .base_processor import BaseProcessor
+from .randaugment import RandomAugment
 from omegaconf import OmegaConf
 from torchvision import transforms
 from torchvision.transforms.functional import InterpolationMode

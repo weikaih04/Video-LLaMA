@@ -15,7 +15,7 @@ from torchvision.transforms import (
     RandomResizedCrop,
 )
 
-import video_llama.processors.functional_video as F
+from . import functional_video as F
 
 
 __all__ = [

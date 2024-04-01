@@ -5,15 +5,15 @@
  For full license text, see the LICENSE_Lavis file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
 
-from video_llama.datasets.builders.base_dataset_builder import load_dataset_config
-from video_llama.datasets.builders.image_text_pair_builder import (
+from ...datasets.builders.base_dataset_builder import load_dataset_config
+from ...datasets.builders.image_text_pair_builder import (
     CCSBUBuilder,
     LaionBuilder,
     CCSBUAlignBuilder
 )
-from video_llama.datasets.builders.video_caption_builder import WebvidBuilder
-from video_llama.common.registry import registry
-from video_llama.datasets.builders.instruct_builder import WebvidInstruct_Builder,LlavaInstruct_Builder
+from ...datasets.builders.video_caption_builder import WebvidBuilder
+from ...common.registry import registry
+from ...datasets.builders.instruct_builder import WebvidInstruct_Builder,LlavaInstruct_Builder
 __all__ = [
     "CCSBUBuilder",
     "LaionBuilder",

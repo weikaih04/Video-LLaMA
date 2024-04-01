@@ -5,8 +5,8 @@
  For full license text, see the LICENSE_Lavis file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
 
-from video_llama.common.registry import registry
-from video_llama.tasks.base_task import BaseTask
+from ..common.registry import registry
+from .base_task import BaseTask
 
 
 @registry.register_task("image_text_pretrain")

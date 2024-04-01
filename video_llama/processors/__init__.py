@@ -5,17 +5,17 @@
  For full license text, see the LICENSE_Lavis file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
 
-from video_llama.processors.base_processor import BaseProcessor
-from video_llama.processors.blip_processors import (
+from .base_processor import BaseProcessor
+from .blip_processors import (
     Blip2ImageTrainProcessor,
     Blip2ImageEvalProcessor,
     BlipCaptionProcessor,
 )
-from video_llama.processors.video_processor import (
+from .video_processor import (
     AlproVideoTrainProcessor,
     AlproVideoEvalProcessor
 )
-from video_llama.common.registry import registry
+from ..common.registry import registry
 
 __all__ = [
     "BaseProcessor",

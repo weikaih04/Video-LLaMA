@@ -8,7 +8,7 @@
 import time
 import random
 import torch
-from video_llama.datasets.data_utils import move_to_cuda
+from ..data_utils import move_to_cuda
 from torch.utils.data import DataLoader
 
 

@@ -10,12 +10,12 @@ import sys
 
 from omegaconf import OmegaConf
 
-from video_llama.common.registry import registry
+from .common.registry import registry
 
-from video_llama.datasets.builders import *
-from video_llama.models import *
-from video_llama.processors import *
-from video_llama.tasks import *
+from .datasets.builders import *
+from .models import *
+from .processors import *
+from .tasks import *
 
 
 root_dir = os.path.dirname(os.path.abspath(__file__))

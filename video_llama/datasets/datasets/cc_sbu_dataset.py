@@ -1,8 +1,8 @@
 import os
 from PIL import Image
 import webdataset as wds
-from video_llama.datasets.datasets.base_dataset import BaseDataset
-from video_llama.datasets.datasets.caption_datasets import CaptionDataset
+from .base_dataset import BaseDataset
+from .caption_datasets import CaptionDataset
 
 
 class CCSBUDataset(BaseDataset):

@@ -6,14 +6,14 @@
 """
 
 import torch
-from video_llama.common.registry import registry
+from ..common.registry import registry
 from decord import VideoReader
 import decord
 import numpy as np
-from video_llama.processors import transforms_video
-from video_llama.processors.base_processor import BaseProcessor
-from video_llama.processors.randaugment import VideoRandomAugment
-from video_llama.processors import functional_video as F
+from . import transforms_video
+from .base_processor import BaseProcessor
+from .randaugment import VideoRandomAugment
+from . import functional_video as F
 from omegaconf import OmegaConf
 from torchvision import transforms
 import random as rnd

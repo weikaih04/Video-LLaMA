@@ -6,7 +6,7 @@
 """
 
 import webdataset as wds
-from video_llama.datasets.datasets.base_dataset import BaseDataset
+from .base_dataset import BaseDataset
 
 
 class LaionDataset(BaseDataset):

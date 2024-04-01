@@ -22,8 +22,8 @@ import numpy as np
 import torch
 from torch.utils.data.dataset import IterableDataset
 
-from video_llama.common.registry import registry
-from video_llama.datasets.datasets.base_dataset import ConcatDataset
+from ..common.registry import registry
+from .datasets.base_dataset import ConcatDataset
 
 
 decord.bridge.set_bridge("torch")

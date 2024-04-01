@@ -8,7 +8,7 @@
 import os
 from collections import OrderedDict
 
-from video_llama.datasets.datasets.base_dataset import BaseDataset
+from .base_dataset import BaseDataset
 from PIL import Image
 
 

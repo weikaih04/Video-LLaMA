@@ -10,10 +10,10 @@ import os
 
 import torch
 import torch.distributed as dist
-from video_llama.common.dist_utils import get_rank, get_world_size, is_main_process, is_dist_avail_and_initialized
-from video_llama.common.logger import MetricLogger, SmoothedValue
-from video_llama.common.registry import registry
-from video_llama.datasets.data_utils import prepare_sample
+from ..common.dist_utils import get_rank, get_world_size, is_main_process, is_dist_avail_and_initialized
+from ..common.logger import MetricLogger, SmoothedValue
+from ..common.registry import registry
+from ..datasets.data_utils import prepare_sample
 
 
 class BaseTask:

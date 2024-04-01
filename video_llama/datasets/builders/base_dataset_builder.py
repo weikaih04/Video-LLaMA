@@ -15,10 +15,10 @@ from omegaconf import OmegaConf
 import torch.distributed as dist
 from torchvision.datasets.utils import download_url
 
-import video_llama.common.utils as utils
-from video_llama.common.dist_utils import is_dist_avail_and_initialized, is_main_process
-from video_llama.common.registry import registry
-from video_llama.processors.base_processor import BaseProcessor
+from ...common import utils
+from ...common.dist_utils import is_dist_avail_and_initialized, is_main_process
+from ...common.registry import registry
+from ...processors.base_processor import BaseProcessor
 
 
 

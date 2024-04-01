@@ -5,10 +5,10 @@
  For full license text, see the LICENSE_Lavis file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
 
-from video_llama.common.registry import registry
-from video_llama.tasks.base_task import BaseTask
-from video_llama.tasks.image_text_pretrain import ImageTextPretrainTask
-from video_llama.tasks.video_text_pretrain import VideoTextPretrainTask
+from ..common.registry import registry
+from .base_task import BaseTask
+from .image_text_pretrain import ImageTextPretrainTask
+from .video_text_pretrain import VideoTextPretrainTask
 
 
 def setup_task(cfg):

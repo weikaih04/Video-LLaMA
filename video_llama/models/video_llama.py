@@ -5,17 +5,17 @@ import torch
 from torch.cuda.amp import autocast as autocast
 import torch.nn as nn
 
-from video_llama.common.registry import registry
-from video_llama.models.blip2 import Blip2Base, disabled_train
-from video_llama.models.modeling_llama import LlamaForCausalLM
-# from video_llama.models.Qformer import BertEncoder
+from ..common.registry import registry
+from .blip2 import Blip2Base, disabled_train
+from .modeling_llama import LlamaForCausalLM
+# from ..models.Qformer import BertEncoder
 from transformers import LlamaTokenizer,BertConfig
 # from transformers.models.bert.modeling_bert import BertEncoder
 import einops
 import copy
-from video_llama.models.Qformer import BertConfig, BertLMHeadModel
-from video_llama.models.ImageBind.models.imagebind_model import ImageBindModel,ModalityType
-from video_llama.models.ImageBind.models import imagebind_model
+from .Qformer import BertConfig, BertLMHeadModel
+from .ImageBind.models.imagebind_model import ImageBindModel,ModalityType
+from .ImageBind.models import imagebind_model
 # from flamingo_pytorch import PerceiverResampler
 @registry.register_model("video_llama")
 class VideoLLAMA(Blip2Base):
